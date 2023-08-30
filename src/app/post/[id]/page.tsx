@@ -24,7 +24,7 @@ export async function generateMetadata({
   };
 }
 
-const PostDetail: FC<TypeBlogDetail> = async ({ params }: PostDetailProps) => {
+const PostDetail: FC<PostDetailProps> = async ({ params }) => {
   const posts = await getPostWithUser();
   const post = posts.find((post) => post.id === params.id);
   console.log(post);
@@ -33,11 +33,10 @@ const PostDetail: FC<TypeBlogDetail> = async ({ params }: PostDetailProps) => {
   return (
     <div>
       <BlogDetail
-        title={post.title}
-        desc={post.body}
-        author={post.user.name}
-        comment={Comment}
-      />
+        title={post?.title}
+        desc={post?.body}
+        author={post?.user?.name}
+        comment={Comment} />
     </div>
   );
 };

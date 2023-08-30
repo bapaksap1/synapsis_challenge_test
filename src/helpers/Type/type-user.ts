@@ -14,9 +14,8 @@ export type TypeUser = {
 };
 
 export type TypeUsersDetail = {
-    id: string;
-    name: string;
-    email: string;
-    gender: string;
-    status: string;
+    name?: string;
+    email?: string;
+    gender?: string;
+    status?: string;
 };

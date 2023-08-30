@@ -10,10 +10,11 @@ type modal = {
   id: string;
 };
 
+
 const ModalDelete: FC<modal> = ({ isOpen, onClose, id }) => {
   const [messageModal, setMessageModal] = useState(false)
-  const [message, setMessage] = useState("")
-  if (!isOpen) return null;
+  const [message, setMessage] = useState<any>("")
+
   let pesan
   const DeleteUsers = async () => {
     const a = await deleteUsers(id);
@@ -21,7 +22,7 @@ const ModalDelete: FC<modal> = ({ isOpen, onClose, id }) => {
     setMessage(a.pesan)
     onClose
   };
-  
+  if (!isOpen) return null;
 
 
   return (

@@ -15,7 +15,7 @@ const Navbar: FC<TypeNavbar> = (props) => {
   return (
     <div className="gap-5 flex justify-around px-2.5 py-2.5 w-full ">
       {props.menu.map((e) => (
-        <div className="focus:font-bold hover:font-bold hover:text-blue-500">
+        <div key={e} className="focus:font-bold hover:font-bold hover:text-blue-500">
           {e === "Post" ? (
             <Link className={style("/")} href={"/"}>
               {e}

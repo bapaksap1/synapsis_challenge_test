@@ -20,7 +20,7 @@ const Users: FC<ListUsers> = (props) => {
     const [isID, setIsID] = useState("");
 
     const itemsPerPage = 10;
-    const renderItem = (e) => (
+    const renderItem = (e:any) => (
         <div>
             <div className="flex flex-row justify-between border-b-[0.8px] border-b-[black] border-solid">
                 <div className="hover:font-bold hover:text-blue-500 sm:text-[15px] md:text-xl lg:text-xl text-[15px]">

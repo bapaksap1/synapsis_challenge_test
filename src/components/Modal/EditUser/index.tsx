@@ -5,7 +5,7 @@ type modal = {
     onClose: () => void;
 };
 const ModalEdit: FC<modal> = ({ isOpen, onClose }) => {
-    if (!isOpen) return null;
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -25,6 +25,7 @@ const ModalEdit: FC<modal> = ({ isOpen, onClose }) => {
         console.log("Submitted data:", formData);
         // You can perform additional actions with the form data here
     };
+    if (!isOpen) return null;
 
     return (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">

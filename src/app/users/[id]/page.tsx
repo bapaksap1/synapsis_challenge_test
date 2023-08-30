@@ -22,9 +22,9 @@ export async function generateMetadata({
   };
 }
 
-const UserDetailPage: FC<TypeBlogDetail> = async ({
+const UserDetailPage: FC<PostDetailProps> = async ({
   params,
-}: PostDetailProps) => {
+}) => {
   const users = await getUsers();
   const user = users.find((user) => user.id === params.id);
   return (

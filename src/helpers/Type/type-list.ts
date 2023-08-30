@@ -1,18 +1,26 @@
-export type TypeList = {
-  listItem: {
-    id: string;
-    title: string;
-    body: string;
-    user: {
-      name: string;
-    };
-  }[];
-  type: "blog" | "user";
-};
+import {TypeUser} from "@/helpers/Type/type-user";
 
-export type ListPost = {
-    id: number;
+export type TypeList = {
+  listItem?: {
+    user: TypeUser
+        | undefined;
+    id: string;
     user_id: number;
     title: string;
     body: string;
+  }
+}[];
+
+export type ListUsers = {
+  users: {
+    name: string;
+    id: string;
+  }[];
+};
+
+export type ListPost = {
+  id: number;
+  user_id: number;
+  title: string;
+  body: string;
 };

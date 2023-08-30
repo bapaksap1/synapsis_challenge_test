@@ -1,9 +1,10 @@
+"use client"
 import React, { useState } from 'react';
 
 interface PaginationProps<T> {
     data: T[];
     itemsPerPage: number;
-    renderItem: (item: T, index: number) => JSX.Element;
+    renderItem: any;
 }
 
 const Pagination = <T extends {}>({ data, itemsPerPage, renderItem }: PaginationProps<T>) => {
@@ -85,7 +86,7 @@ const Pagination = <T extends {}>({ data, itemsPerPage, renderItem }: Pagination
         return buttons;
     };
     const startIndex: number = (currentPage - 1) * itemsPerPage;
-    const displayedData: T[] = data.slice(startIndex, startIndex + itemsPerPage);
+    const displayedData: T[] = data?.slice(startIndex, startIndex + itemsPerPage);
 
 
     return (

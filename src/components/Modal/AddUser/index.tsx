@@ -6,7 +6,6 @@ type modal = {
   onClose: () => void;
 };
 const ModalAdd: FC<modal> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,14 +25,8 @@ const ModalAdd: FC<modal> = ({ isOpen, onClose }) => {
     event.preventDefault();
     addUsers(formData.name, formData.gender, formData.email, formData.status)
 
-    // You can perform additional actions with the form data here
   };
-
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
+  if (!isOpen) return null;
   return (
       <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
         <div className="bg-white p-8 rounded-3xl shadow-md w-100 ">
@@ -64,7 +57,7 @@ const ModalAdd: FC<modal> = ({ isOpen, onClose }) => {
               <select
                   name="gender"
                   value={formData.gender}
-                  onChange={(e) => handleInputChange(e)}
+                  onChange={(e:any) => handleInputChange(e)}
                   className="w-full p-2 border rounded mt-1"
               >
                 <option value="">Select</option>
@@ -77,7 +70,7 @@ const ModalAdd: FC<modal> = ({ isOpen, onClose }) => {
               <select
                   name="status"
                   value={formData.status}
-                  onChange={(e) => handleInputChange(e)}
+                  onChange={(e:any) => handleInputChange(e)}
                   className="w-full p-2 border rounded mt-1"
               >
                 <option value="">Select</option>
