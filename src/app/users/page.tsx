@@ -5,6 +5,7 @@ import { getUsers } from "@/helpers/Api/Users";
 type TUsers = {
   users: {
     name: string;
+    id: string;
   }[];
 };
 const UsersList: FC<TUsers> = async (props) => {
