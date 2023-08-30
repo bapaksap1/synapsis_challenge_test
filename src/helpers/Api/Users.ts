@@ -5,7 +5,7 @@ import error = Simulate.error;
 import { log } from "util";
 
 export async function getUsers() {
-  const res = await fetch(`https://gorest.co.in/public/v2/users`);
+  const res = await fetch(`https://gorest.co.in/public/v2/users?page=1&per_page=100`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -33,5 +33,26 @@ export async function deleteUsers(params: string) {
     else return { message: "Delete Successful" };
   } catch (error) {
     return { message: "Error, please wait a few minute" };
+  }
+}
+
+export async function addUsers(name: string, gender: string, email: string, status: string) {
+  const headers = {
+    Authorization:
+        "Bearer d618fc5ad77d0fdbef1882190ca095538de654ba8c7e6efe4187d04fd581143b",
+  };
+  const body = JSON.stringify({name: name, email: email, gender: gender, status: status})
+  try {
+    const res = await fetch(`https://gorest.co.in/public/v2/users`, {
+      method: "POST",
+      headers,
+      body,
+    }
+    );
+    console.log("sukses bang")
+   return { message: "Add Successful" };
+  } catch (error) {
+    console.log("gagal bang")
+    return { message: "Error, try Agains" };
   }
 }

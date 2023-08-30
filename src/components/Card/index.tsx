@@ -1,6 +1,10 @@
 import { FC } from "react";
 import { TypeCard } from "@/helpers/Type/type-card";
 import Link from "next/link";
+import Pagination from "@/components/Pagination";
+
+
+
 
 const Card: FC<TypeCard> = (props) => {
   return (
@@ -18,6 +22,7 @@ const Card: FC<TypeCard> = (props) => {
           {props.author}
         </p>
       </div>
+
     </div>
   );
 };

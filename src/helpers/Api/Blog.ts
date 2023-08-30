@@ -6,7 +6,7 @@ import {ListPost} from "@/helpers/Type/type-list";
 
 
 export async function getPostWithUser() {
-  const res = await fetch("https://gorest.co.in/public/v2/posts");
+  const res = await fetch("https://gorest.co.in/public/v2/posts?page=1&per_page=100");
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }

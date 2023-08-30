@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import {addUsers} from "@/helpers/Api/Users";
 
 type modal = {
   isOpen: boolean;
@@ -10,6 +11,7 @@ const ModalAdd: FC<modal> = ({ isOpen, onClose }) => {
     name: "",
     email: "",
     gender: "",
+    status: "",
   });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,10 +24,16 @@ const ModalAdd: FC<modal> = ({ isOpen, onClose }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Submitted data:", formData);
+    addUsers(formData.name, formData.gender, formData.email, formData.status)
+
     // You can perform additional actions with the form data here
   };
 
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
   return (
       <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
         <div className="bg-white p-8 rounded-3xl shadow-md w-100 ">
@@ -56,13 +64,25 @@ const ModalAdd: FC<modal> = ({ isOpen, onClose }) => {
               <select
                   name="gender"
                   value={formData.gender}
-                  onChange={() =>handleInputChange}
+                  onChange={(e) => handleInputChange(e)}
                   className="w-full p-2 border rounded mt-1"
               >
                 <option value="">Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </label>
+            <label className="block mb-2">
+              Gender:
+              <select
+                  name="status"
+                  value={formData.status}
+                  onChange={(e) => handleInputChange(e)}
+                  className="w-full p-2 border rounded mt-1"
+              >
+                <option value="">Select</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
               </select>
             </label>
             <button

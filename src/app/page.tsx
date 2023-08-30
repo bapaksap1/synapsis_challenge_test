@@ -1,4 +1,5 @@
-import BlogDetail from "@/components/Detail/BlogDetail";"use  client"
+import BlogDetail from "@/components/Detail/BlogDetail";
+"use  client"
 import List from "@/components/List/List";
 import {getPostWithUser} from "@/helpers/Api/Blog";
 
@@ -7,7 +8,7 @@ export default async function Home() {
 
     return (
         <div>
-            <List listItem={list} type={"blog"}/>
+            <List listItem={list} />
         </div>
 
     );
