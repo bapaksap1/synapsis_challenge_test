@@ -15,6 +15,12 @@ const Users: FC<ListUsers> = (props) => {
   const [modalAdd, setModalAdd] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
   const [modalEdit, setModalEdit] = useState(false);
+  const [bio, setBio] = useState({
+      name: "",
+      email: "",
+      gender: "",
+      status: ""
+  })
   const [isID, setIsID] = useState("");
 
   const renderItem = (e: any) => (
@@ -26,7 +32,7 @@ const Users: FC<ListUsers> = (props) => {
         </div>
         <div className="flex flex-row gap-4">
           <img
-            className="w-6 h-6"
+            className="w-6 h-6 hover"
             src={"delete.svg"}
             alt={"Ava"}
             onClick={() => {
@@ -37,7 +43,11 @@ const Users: FC<ListUsers> = (props) => {
           <img
             className="w-6 h-6"
             src={"edit.svg"}
-            onClick={() => setModalEdit(true)}
+            onClick={() => {
+              setModalEdit(true);
+              setIsID(e.id);
+              setBio({name: e.name, email: e.email, gender: e.gender, status: e.status })
+            }}
             alt={"ava"}
           />
         </div>
@@ -53,7 +63,7 @@ const Users: FC<ListUsers> = (props) => {
         onClose={() => setModalDelete(false)}
         id={isID}
       />
-      <ModalEdit isOpen={modalEdit} onClose={() => setModalEdit(false)} />
+      <ModalEdit isOpen={modalEdit} onClose={() => setModalEdit(false)} id={isID} bio={bio} />
       <div className="flex-col flex gap-10 ">
         <div className="font-bold text-4xl">User List</div>
         <Pagination<Post>

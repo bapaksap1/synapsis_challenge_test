@@ -8,19 +8,16 @@ type modal = {
   id: string;
 };
 
-
 const ModalDelete: FC<modal> = ({ isOpen, onClose, id }) => {
-  const [messageModal, setMessageModal] = useState(false)
-  const [message, setMessage] = useState<any>("")
+  const [messageModal, setMessageModal] = useState(false);
+  const [message, setMessage] = useState<any>("");
 
   const DeleteUsers = async () => {
     const a = await deleteUsers(id);
-    setMessageModal(true)
-    setMessage(a.pesan)
-    onClose()
+    setMessageModal(true);
+    setMessage(a.pesan);
   };
   if (!isOpen) return null;
-
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
@@ -43,7 +40,14 @@ const ModalDelete: FC<modal> = ({ isOpen, onClose, id }) => {
           </button>
         </div>
       </div>
-      <ModalMessage isOpen={messageModal} onClose={() => setMessageModal(false)} message={message} />
+      <ModalMessage
+        isOpen={messageModal}
+        onClose={() => {
+          setMessageModal(false);
+          onClose();
+        }}
+        message={message}
+      />
     </div>
   );
 };

@@ -21,7 +21,7 @@ const ModalMessage: FC<modal> = ({message, isOpen, onClose}) => {
                         className="border-2 border-black py-2 px-4 rounded mt-4 md:mt-0 md:mr-2 hover:bg-blue-500 hover:text-white"
                         onClick={onClose}
                     >
-                        Cancel
+                        Close
                     </button>
                 </div>
             </div>
