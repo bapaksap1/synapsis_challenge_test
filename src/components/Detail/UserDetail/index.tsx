@@ -1,6 +1,5 @@
 "use client"
 import React, { FC, useState } from "react";
-import Modal from "@/components/Modal/AddUser";
 import { TypeUsersDetail } from "@/helpers/Type/type-user";
 
 const Users: FC<TypeUsersDetail> = (props) => {
@@ -9,7 +8,7 @@ const Users: FC<TypeUsersDetail> = (props) => {
   return (
       <div className="flex-col flex gap-10 p-6 md:p-10">
         <h1 className="font-bold text-2xl md:text-4xl">User Detail</h1>
-        <table className="border-collapse w-full border-separate border-spacing-y-5">
+        <table className="w-full border-separate border-spacing-y-5">
           <thead>
           <tr>
             <th className="pr-2">Name</th>

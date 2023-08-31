@@ -1,7 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 import { deleteUsers } from "@/helpers/Api/Users";
-import 'react-toastify/dist/ReactToastify.css'; // Import the Toastify styles
-import { ToastContainer, toast } from 'react-toastify';
 import ModalMessage from "@/components/Modal/Message";
 
 type modal = {
@@ -15,12 +13,11 @@ const ModalDelete: FC<modal> = ({ isOpen, onClose, id }) => {
   const [messageModal, setMessageModal] = useState(false)
   const [message, setMessage] = useState<any>("")
 
-  let pesan
   const DeleteUsers = async () => {
     const a = await deleteUsers(id);
     setMessageModal(true)
     setMessage(a.pesan)
-    onClose
+    onClose()
   };
   if (!isOpen) return null;
 

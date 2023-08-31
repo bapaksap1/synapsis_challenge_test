@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { TypeBlogDetail } from "@/helpers/Type/type-blogDetail";
 import { getPostWithUser } from "@/helpers/Api/Blog";
 import { Metadata } from "next";
 import BlogDetail from "@/components/Detail/BlogDetail";

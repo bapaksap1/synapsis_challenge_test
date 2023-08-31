@@ -1,5 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
-import { deleteUsers } from "@/helpers/Api/Users";
+import React, { FC } from "react";
 
 type modal = {
     isOpen: boolean;

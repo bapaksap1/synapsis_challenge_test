@@ -23,7 +23,7 @@ const ModalAdd: FC<modal> = ({ isOpen, onClose }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    addUsers(formData.name, formData.gender, formData.email, formData.status)
+    addUsers(formData.name, formData.gender, formData.email, formData.status);
 
   };
   if (!isOpen) return null;

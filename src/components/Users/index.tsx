@@ -1,6 +1,5 @@
 "use client";
 import { FC, useState } from "react";
-import Modal from "@/components/Modal/AddUser";
 import Link from "next/link";
 import ModalAdd from "@/components/Modal/AddUser";
 import ModalDelete from "@/components/Modal/DeleteUser";
@@ -19,7 +18,6 @@ const Users: FC<ListUsers> = (props) => {
     const [modalEdit, setModalEdit] = useState(false);
     const [isID, setIsID] = useState("");
 
-    const itemsPerPage = 10;
     const renderItem = (e:any) => (
         <div>
             <div className="flex flex-row justify-between border-b-[0.8px] border-b-[black] border-solid">
@@ -31,14 +29,16 @@ const Users: FC<ListUsers> = (props) => {
                     <img
                         className="w-6 h-6"
                         src={"delete.svg"}
+                        alt={"Ava"}
                         onClick={() => {
-                            setModalDelete(true), setIsID(e.id);
+                            setModalDelete(true); setIsID(e.id);
                         }}
                     />
                     <img
                         className="w-6 h-6"
                         src={"edit.svg"}
                         onClick={() => setModalEdit(true)}
+                        alt={"ava"}
                     />
                 </div>
             </div>

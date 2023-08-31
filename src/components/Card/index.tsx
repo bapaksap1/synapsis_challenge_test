@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { TypeCard } from "@/helpers/Type/type-card";
 import Link from "next/link";
-import Pagination from "@/components/Pagination";
 
 
 
@@ -15,7 +14,7 @@ const Card: FC<TypeCard> = (props) => {
       <p className="text-justify text-[15px]">{props.desc}</p>
       <div className="flex flex-row mt-1 justify-start ">
         <div className="flex flex-col">
-          <img className="w-6 h-6 " src={"ava.svg"} />
+          <img className="w-6 h-6 " src={"ava.svg"} alt={"avatar"}/>
         </div>
         <p className="ml-2 text-[15px] text-gray-400 font-semibold">
           {" "}

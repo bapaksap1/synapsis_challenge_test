@@ -1,15 +1,11 @@
 'use client'
-import { FC } from "react";
 import Card from "@/components/Card";
-import { TypeList } from "@/helpers/Type/type-list";
 import Pagination from "@/components/Pagination";
-import Link from "next/link";
 
 interface Post {
   name: string
 }
 const List = ({ listItem }: [] | any) => {
-  const itemsPerPage = 10;
   const renderItem = (item: {
     id: string;
     title: string;

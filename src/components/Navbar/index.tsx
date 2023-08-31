@@ -1,12 +1,11 @@
 "use client";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { TypeNavbar } from "@/helpers/Type/type-navbar";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const Navbar: FC<TypeNavbar> = (props) => {
   const pathname = usePathname();
-  const [selectedNav, setSelectedNav] = useState("Post");
   const style = (path: string) => {
     console.log(path);
     return pathname === path ? "font-bold underline" : "";
