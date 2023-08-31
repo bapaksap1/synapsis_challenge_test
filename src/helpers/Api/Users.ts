@@ -49,10 +49,9 @@ export async function addUsers(name: string, gender: string, email: string, stat
       body,
     }
     );
-    console.log("sukses bang")
    return { message: "Add Successful" };
   } catch (error) {
-    console.log("gagal bang")
+
     return { message: "Error, try Agains" };
   }
 }

@@ -22,7 +22,6 @@ const ModalEdit: FC<modal> = ({ isOpen, onClose }) => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log("Submitted data:", formData);
         // You can perform additional actions with the form data here
     };
     if (!isOpen) return null;

@@ -7,10 +7,8 @@ import Link from "next/link";
 const Navbar: FC<TypeNavbar> = (props) => {
   const pathname = usePathname();
   const style = (path: string) => {
-    console.log(path);
     return pathname === path ? "font-bold underline" : "";
   };
-  console.log(pathname);
   return (
     <div className="gap-5 flex justify-around px-2.5 py-2.5 w-full ">
       {props.menu.map((e) => (

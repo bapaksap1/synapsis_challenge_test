@@ -26,9 +26,7 @@ export async function generateMetadata({
 const PostDetail: FC<PostDetailProps> = async ({ params }) => {
   const posts = await getPostWithUser();
   const post = posts.find((post) => post.id === params.id);
-  console.log(post);
   const Comment = await getComments(params.id);
-  console.log(Comment, "com");
   return (
     <div>
       <BlogDetail
